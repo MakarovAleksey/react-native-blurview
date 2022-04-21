@@ -16,9 +16,9 @@ type BlurviewProps = {
   style: ViewStyle;
 };
 
-const ComponentName = 'BlurviewView';
+const ComponentName = 'BlurView';
 
-export const BlurviewView =
+export const BlurView =
   UIManager.getViewManagerConfig(ComponentName) != null
     ? requireNativeComponent<BlurviewProps>(ComponentName)
     : () => {

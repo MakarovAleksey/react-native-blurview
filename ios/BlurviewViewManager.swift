@@ -1,12 +1,12 @@
-@objc(BlurviewViewManager)
-class BlurviewViewManager: RCTViewManager {
+@objc(BlurViewManager)
+class BlurViewManager: RCTViewManager {
 
-  override func view() -> (BlurviewView) {
-    return BlurviewView()
+  override func view() -> (BlurView) {
+    return BlurView()
   }
 }
 
-class BlurviewView : UIView {
+class BlurView : UIView {
 
   @objc var color: String = "" {
     didSet {

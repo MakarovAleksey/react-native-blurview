@@ -11,11 +11,11 @@ npm install react-native-blurview
 ## Usage
 
 ```js
-import { BlurviewView } from "react-native-blurview";
+import { BlurView } from "react-native-blurview";
 
 // ...
 
-<BlurviewView color="tomato" />
+<BlurView color="tomato" />
 ```
 
 ## Contributing

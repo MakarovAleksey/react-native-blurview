@@ -1,12 +1,12 @@
 import * as React from 'react';
 
 import { StyleSheet, View } from 'react-native';
-import { BlurviewView } from 'react-native-blurview';
+import { BlurView } from 'react-native-blurview';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <BlurviewViewManager color="#32a852" style={styles.box} />
+      <BlurView color="#32a852" style={styles.box} />
     </View>
   );
 }
