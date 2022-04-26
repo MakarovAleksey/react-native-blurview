@@ -34,7 +34,7 @@ public class BlurViewManager extends SimpleViewManager<View> {
       return blurView;
     }
 
-    @ReactProp(name = "backgroundColor")
+    @ReactProp(name = "color")
     public void setColor(View view, String color) {
         view.setBackgroundColor(Color.parseColor(color));
     }
