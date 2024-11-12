@@ -1,7 +1,18 @@
 import UIKit
 import React
 
-@objc(BlurView)
+@objc(BlurViewManager)
+class BlurViewManager: RCTViewManager {
+  
+  override func view() -> UIView! {
+    return BlurView()
+  }
+  
+  override static func requiresMainQueueSetup() -> Bool {
+    return true
+  }
+}
+
 class BlurView: UIView {
   
   private var blurEffectView: UIVisualEffectView?
