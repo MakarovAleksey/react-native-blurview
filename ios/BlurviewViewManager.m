@@ -3,5 +3,5 @@
 @interface RCT_EXTERN_MODULE(BlurViewManager, RCTViewManager)
 
 RCT_EXPORT_VIEW_PROPERTY(color, NSString)
-
+RCT_EXPORT_VIEW_PROPERTY(blurType, NSString)
 @end

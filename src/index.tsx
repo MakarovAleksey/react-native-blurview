@@ -13,6 +13,7 @@ const LINKING_ERROR =
 
 type BlurviewProps = {
   color: string;
+  blurType: 'light' | 'dark' | 'extraLight';
   style: ViewStyle;
 };
 

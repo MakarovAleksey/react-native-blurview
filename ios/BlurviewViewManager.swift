@@ -3,13 +3,45 @@ class BlurViewManager: RCTViewManager {
     override static func requiresMainQueueSetup() -> Bool {
       return true
     }
-  override func view() -> (BlurView) {
-    let blurView = BlurView()
-      let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
-      let blurEffectView = UIVisualEffectView(effect: blurEffect)
-      blurEffectView.frame = blurView.bounds
-      blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-      blurView.addSubview(blurEffectView)
+    private var blurEffectView: UIVisualEffectView?
+  
+    @objc var blurType: String = "light" {
+      didSet {
+        applyBlurEffect()
+      }
+    }
+    
+    override init(frame: CGRect) {
+      super.init(frame: frame)
+      applyBlurEffect()
+    }
+    
+    required init?(coder: NSCoder) {
+      super.init(coder: coder)
+      applyBlurEffect()
+    }
+    
+    private func applyBlurEffect() {
+      blurEffectView?.removeFromSuperview()
+      
+      let effect: UIBlurEffect.Style
+      switch blurType {
+      case "dark":
+        effect = .dark
+      case "extraLight":
+        effect = .extraLight
+      default:
+        effect = .light
+      }
+    override func view() -> (BlurView) {
+      let blurView = BlurView()
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = blurView.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        if let blurEffectView = blurEffectView {
+          addSubview(blurEffectView)
+        }
     return blurView
   }
 }
